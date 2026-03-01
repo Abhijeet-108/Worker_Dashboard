@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Worker Productivity Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>AI Worker Productivity Dashboard</h1>
+      <section class="controls">
+        <button id="refreshBtn">Refresh Metrics</button>
+        <button id="seedBtn">Reset & Seed Dummy Data</button>
+        <label>
+          Worker:
+          <select id="workerFilter"><option value="all">All</option></select>
+        </label>
+        <label>
+          Workstation:
+          <select id="stationFilter"><option value="all">All</option></select>
+        </label>
+      </section>
+
+      <section id="factoryCards" class="cards"></section>
+
+      <h2>Workers</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th><th>Name</th><th>Active (min)</th><th>Idle (min)</th><th>Utilization %</th><th>Units</th><th>Units/hr</th>
+          </tr>
+        </thead>
+        <tbody id="workersBody"></tbody>
+      </table>
+
+      <h2>Workstations</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th><th>Name</th><th>Occupancy (min)</th><th>Utilization %</th><th>Units</th><th>Throughput/hr</th>
+          </tr>
+        </thead>
+        <tbody id="stationsBody"></tbody>
+      </table>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
